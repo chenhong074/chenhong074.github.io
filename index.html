@@ -81,7 +81,7 @@
         enable: true
       },
       daovoice: {
-        enable: false
+        enable: true
       },
       preview: {
         background: {
@@ -147,7 +147,7 @@
         <a href="/about/ " class="underline "> 关于</a>
       </li></ul>
     
-      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+      <div class="menu-copyright"><p> Copyright© 2020 | 秋色遇见 🐈 </p></div>
     
   </div>
 </nav>
@@ -204,6 +204,10 @@
       <div class="post-info">
         <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 03, 2020</span>
         
+          <span class="post-info-item">
+            <i class="iconfont iconeye"></i><span id="/2020/12/03/%E6%88%91%E5%B0%A4%E5%85%B6%E7%9A%84%E6%83%B3%E4%BD%A0/%E6%88%91%E5%B0%A4%E5%85%B6%E7%9A%84%E6%83%B3%E4%BD%A0/" class="leancloud" data-flag-title="我尤其的想你"></span>
+          </span>
+        
         <span class="post-info-item"><i class="iconfont iconfont-size"></i>959</span>
       </div>
     </div>
@@ -233,6 +237,10 @@
       <div class="post-info">
         <span class="post-info-item"><i class="iconfont iconcalendar"></i>November 30, 2020</span>
         
+          <span class="post-info-item">
+            <i class="iconfont iconeye"></i><span id="/2020/11/30/%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AE%E4%B8%A4%E4%B8%AASSH/%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AE%E4%B8%A4%E4%B8%AASSH/" class="leancloud" data-flag-title="同时配置两个SSH"></span>
+          </span>
+        
         <span class="post-info-item"><i class="iconfont iconfont-size"></i>1476</span>
       </div>
     </div>
@@ -257,6 +265,10 @@
       </div>
       <div class="post-info">
         <span class="post-info-item"><i class="iconfont iconcalendar"></i>November 28, 2020</span>
+        
+          <span class="post-info-item">
+            <i class="iconfont iconeye"></i><span id="/2020/11/28/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="leancloud" data-flag-title="Hexo搭建个人博客"></span>
+          </span>
         
         <span class="post-info-item"><i class="iconfont iconfont-size"></i>2950</span>
       </div>
@@ -304,13 +316,17 @@
           <i class="iconfont  iconmail"></i>
       </a></div>
   
-    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    <div class="footer-copyright"><p> Copyright© 2020 | 秋色遇见 🐈 </p></div>
   
 </footer>
   
       <div class="fab fab-plus">
     <i class="iconfont iconplus"></i>
   </div>
+  
+    <div class="fab fab-daovoice">
+      <i class="iconfont iconcomment"></i>
+    </div>
   
   
   <div class="fab fab-up">
@@ -357,6 +373,43 @@
 <script src="/js/script.js"></script>
 
 
+
+  <script>
+  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
+
+    AV.init({
+      appId: '1nl07a1hWd17nCncw9aC4e25-gzGzoHsz',
+      appKey: 'g5p7jsUptjFTvIRHBqAAkTSX',
+      serverURLs: 'https://leancloud.cn/',
+    });
+
+    const showCount = (Counter) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud").each(async (e) => {
+        const url = $(".leancloud").eq(e).attr('id').trim();
+        const query = new AV.Query("Counter");
+        query.equalTo("words", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud").eq(e).text(count ? count : '--');
+      });
+    }
+
+    const addCount = (Counter) => {
+      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'http://example.com';
+      var query = new Counter;
+      query.save({
+        words: url
+      });
+    }
+
+    $(function () {
+      const Counter = AV.Object.extend("Counter");
+      addCount(Counter);
+      showCount(Counter);
+    });
+
+  });
+</script>
 
 
 
