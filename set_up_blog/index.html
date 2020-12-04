@@ -253,7 +253,7 @@
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span><br><span class="hljs-attribute">hexo g</span><br><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure>
 
 <p>如果这是你的第一次，终端会让你输入 Github 的邮箱和密码，正确输入后，稍等片刻，就会把你的博客上传至 Github 了。以后在每次把博客写完后，执行一下这个命令就可以直接发布</p>
-<p>恭喜你能走到这一步，你的博客已经搭建完成了，在浏览器中输入 <a href="http://chenhong074.github.io/">http://chenhong074.github.io</a> 就能够正常访问啦！</p>
+<p>恭喜你能走到这一步，你的博客已经搭建完成了，在浏览器中输入 <a target="_blank" rel="noopener" href="http://chenhong074.github.io/">http://chenhong074.github.io</a> 就能够正常访问啦！</p>
 <p>4.更换 Hexo 主题<br>由于默认的博客主题可能不能满足大家的需求，所以再提一下更换主题的方法<br>首先到<a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo 官网</a>中选择一款喜欢的主题，这里我以我博客采用的主题为例，我采用的 pure 主题，首先在 Hexo 系统文件夹中打开终端，然后输入</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/izhaoo/</span>hexo-theme-zhaoo.git themes/pure<br></code></pre></td></tr></table></figure>
 
@@ -271,7 +271,7 @@
           <ul class="copyright">
   
     <li><strong>本文作者：</strong>秋色遇见🐈</li>
-    <li><strong>本文链接：</strong><a href="https://chenhong074.github.io/set_up_blog/index.html" title="https:&#x2F;&#x2F;chenhong074.github.io&#x2F;set_up_blog&#x2F;index.html">https:&#x2F;&#x2F;chenhong074.github.io&#x2F;set_up_blog&#x2F;index.html</a></li>
+    <li><strong>本文链接：</strong><a href="http://example.com/set_up_blog/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;set_up_blog&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;set_up_blog&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
 </ul>
@@ -445,7 +445,7 @@
     }
 
     const addCount = (Counter) => {
-      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'https://chenhong074.github.io';
+      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'http://example.com';
       var query = new Counter;
       query.save({
         words: url
