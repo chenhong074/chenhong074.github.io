@@ -6,13 +6,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>同时配置两个SSH - 秋色遇见🐈</title>
+  <title>表格 + 柱状图 - 秋色遇见🐈</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   <meta name="keywords" content="前端狗 vue">
-  <meta name="description" content="同时配置 GitLab 和 GitHub 的 SSH
-...">
+  <meta name="description" content="vue+element+echarts 柱状图+表格
+
+">
   <meta name="author" content="秋色遇见🐈">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -134,7 +135,7 @@
         <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
       
     </div>
-    <div class="center">同时配置两个SSH</div>
+    <div class="center">表格 + 柱状图</div>
     <div class="right">
       <i class="iconfont iconmenu j-navbar-menu"></i>
     </div>
@@ -173,80 +174,42 @@
       <div class="col-xl-6"><article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="/images/20200125103032.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img   class="lazyload" data-original="/images/20201203151528.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
   <div class="head-mask">
-    <h1 class="head-title">同时配置两个SSH</h1>
+    <h1 class="head-title">表格 + 柱状图</h1>
     <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>十一月 30, 2020</span>
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>十二月 04, 2020</span>
       
         <span class="post-info-item">
-          <i class="iconfont iconeye"></i><span id="/configure-more-ssh/" class="leancloud" data-flag-title="同时配置两个SSH"></span>
+          <i class="iconfont iconeye"></i><span id="/table_and_barChart/" class="leancloud" data-flag-title="表格 + 柱状图"></span>
         </span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1503</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>28</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <h4 id="场景"><a href="#场景" class="headerlink" title="场景:"></a>场景:</h4><ol>
-<li>公司有自己的 GitLab，公司代码都是提交到这上面</li>
-<li>自己平时学习的时候，代码是提交到 GitHub<br>为了同时支持这两种操作，一台电脑需要为不同的网站创建单独的 key</li>
-</ol>
-<h4 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h4><p>1.配置公司的 GitLab<br>1.1 git 输入如下命令，生成密钥 ssh，一路回车即可</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh-keygen -t rsa -C “<span class="hljs-symbol">yourgitlab@</span>email.com” <span class="hljs-comment">//GitLab的邮箱</span><br></code></pre></td></tr></table></figure>
-
-<p>这个我们选择生成在默认文件 id_rsa.pub（我的是 Mac，默认在~/.ssh 里面，Windows 在 C:\Users\xxxx.ssh 文件下）</p>
-<p>1.2 打开 iid_rsa.pub 文件，复制里面的内容粘贴到 GitLab 的密钥配置中</p>
-<p>1.3 输入命令 ssh -T git@gitlab 域名.com 查看是否配置成功，成功显示如下:</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh -T <span class="hljs-symbol">git@</span>gitlab 域名.com<br></code></pre></td></tr></table></figure>
-
-<p><img   class="lazyload" data-original="/configure-more-ssh/01.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
-<p>或者简单粗暴直接 clone 工程，选择直接 clone，要先索引到要 clone 的目录下，命令 git clone <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#108;&#97;&#98;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#108;&#97;&#98;&#46;&#x63;&#111;&#x6d;</a>:xxx/xxx.git</p>
-<p>2.配置自己的 GitHub<br>1.1 git 命令生成密钥 ssh 并直接命名（此时不是默认文件），一路回车即可</p>
-<p>如果你之前已经生成过该名字的密钥想更改，就在第二步提示填写 yes，就会覆盖以前的</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh-keygen -t rsa -C “<span class="hljs-symbol">yourgithub@</span>email.com” -f github_id-rsa <span class="hljs-comment">//GitHub的邮箱</span><br></code></pre></td></tr></table></figure>
-
-<p>1.2 查看文件，将 github_id-rsa.pub 文件里的密钥 ssh 粘贴到 GitHub 中</p>
-<p>3.创建一个 config 文件来管理公钥和私钥</p>
-<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arcade">cd ~<span class="hljs-regexp">/.ssh/</span><br>touch config<br>vim config<br></code></pre></td></tr></table></figure>
-
-<p>4.配置 config 文件</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#GitLab</span><br><span class="hljs-selector-tag">host</span> <span class="hljs-selector-tag">yourgitlab</span>域名<span class="hljs-selector-class">.com</span><br>     <span class="hljs-selector-tag">Hostname</span> <span class="hljs-selector-tag">yourgitlab</span>域名<span class="hljs-selector-class">.com</span><br>     <span class="hljs-selector-tag">User</span> <span class="hljs-selector-tag">git</span><br>     <span class="hljs-selector-tag">IdentityFile</span> ~/<span class="hljs-selector-class">.ssh</span>/<span class="hljs-selector-tag">gitlab_id-rsa</span> (<span class="hljs-selector-tag">gitlab</span>的<span class="hljs-selector-tag">ssh</span>，也可是默认的<span class="hljs-selector-tag">id_rsa</span>)<br><br><span class="hljs-selector-tag">Host</span> <span class="hljs-selector-tag">GitHub</span><span class="hljs-selector-class">.com</span><br>    <span class="hljs-selector-tag">Hostname</span> <span class="hljs-selector-tag">ssh</span><span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.com</span><br>    <span class="hljs-selector-tag">Port</span> 443<br>    <span class="hljs-selector-tag">User</span> <span class="hljs-selector-tag">git</span><br>    <span class="hljs-selector-tag">IdentityFile</span> ~/<span class="hljs-selector-class">.ssh</span>/<span class="hljs-selector-tag">github_id-rsa</span> (<span class="hljs-selector-tag">github</span>的<span class="hljs-selector-tag">ssh</span>)<br></code></pre></td></tr></table></figure>
-
-<p>5.删除缓存的秘钥（这一步非必须，比如是刚刚安装 git 的）</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">ssh-<span class="hljs-keyword">add</span><span class="bash"> -D</span><br></code></pre></td></tr></table></figure>
-
-<p>6.如果显示如下信息:Could not open a connection to your authentication agent. 执行 eval $(ssh-agent) 然后重新执行第 5 步</p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">eval <span class="hljs-constructor">$(<span class="hljs-params">ssh</span>-<span class="hljs-params">agent</span>)</span><br></code></pre></td></tr></table></figure>
-
-<p>如果没有报错的话，那么可以执行下面一条命令，让 ssh-agent 知道你有这么个 key</p>
-<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">ssh-add ~<span class="hljs-regexp">/.ssh/gi</span>thub_id-rsa<br></code></pre></td></tr></table></figure>
-
-<p>7.输入命令查看是否配置成功，，成功显示如下:</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh -T <span class="hljs-symbol">git@</span>github.com<br></code></pre></td></tr></table></figure>
-
-<p><img   class="lazyload" data-original="/configure-more-ssh/02.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ><br>或者简单粗暴直接 clone 工程</p>
-<p>这样一台电脑就已经成功配置了 GitLab 以及 GitHub 两个 SSH 啦</p>
+        
       </section>
       <section class="extra">
         
           <ul class="copyright">
   
     <li><strong>本文作者：</strong>秋色遇见🐈</li>
-    <li><strong>本文链接：</strong><a href="https://chenhong074.github.io/configure-more-ssh/index.html" title="https:&#x2F;&#x2F;chenhong074.github.io&#x2F;configure-more-ssh&#x2F;index.html">https:&#x2F;&#x2F;chenhong074.github.io&#x2F;configure-more-ssh&#x2F;index.html</a></li>
+    <li><strong>本文链接：</strong><a href="https://chenhong074.github.io/table_and_barChart/index.html" title="https:&#x2F;&#x2F;chenhong074.github.io&#x2F;table_and_barChart&#x2F;index.html">https:&#x2F;&#x2F;chenhong074.github.io&#x2F;table_and_barChart&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
 </ul>
         
         
         
-  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitLab/" rel="tag">GitLab</a></li></ul> 
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Echarts/" rel="tag">Echarts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul> 
 
         
   <nav class="nav">
-    <a href="/especially-miss-you/"><i class="iconfont iconleft"></i>我尤其的想你</a>
-    <a href="/set-up-blog/">Hexo搭建个人博客<i class="iconfont iconright"></i></a>
+    <a></a>
+    <a href="/especially_miss_you/">我尤其的想你<i class="iconfont iconright"></i></a>
   </nav>
 
       </section>

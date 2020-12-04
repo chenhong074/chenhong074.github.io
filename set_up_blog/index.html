@@ -182,7 +182,7 @@
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>十一月 28, 2020</span>
       
         <span class="post-info-item">
-          <i class="iconfont iconeye"></i><span id="/set-up-blog/" class="leancloud" data-flag-title="Hexo搭建个人博客"></span>
+          <i class="iconfont iconeye"></i><span id="/set_up_blog/" class="leancloud" data-flag-title="Hexo搭建个人博客"></span>
         </span>
       
       <span class="post-info-item"><i class="iconfont iconfont-size"></i>2970</span>
@@ -193,7 +193,7 @@
       <section class="content">
         <p>有了简书，CSDN，博客园这类东西后，为什么还需要个人博客呢，除了装逼，当然还有个人博客更加自由，不受任何第三方管理，并且还能够自定义成自己喜欢的样子。还有，如果你是个程序猿，那就更没有理由不自己搭建一个独立博客了。</p>
 <p>1.创建 Github 域名和空间<br>1.1 注册<br>首先你需要注册一个 Github 账号，已有的可以跳过这一步下翻去 1.2 创建仓库，注意 username，这会影响到你的域名，你的域名将会是 <a target="_blank" rel="noopener" href="http://username.github.io/">http://username.github.io</a> ，所以认真的取个名字吧。注册过程中可能需要验证你的邮箱，其他就不在赘述</p>
-<p>1.2 创建仓库<br>然后需要创建一个仓库(repository)来存储我们的网站，点击首页任意位置出现的 New 按钮创建仓库, Respository name 中的 username.github.io 的 username 一定与前面的 Owner 一致，记住你的 username 下面会用到<br><img   class="lazyload" data-original="/set-up-blog/01.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ><br>点击 Create reponsitory ，到这第一步就已经完成了，下面是安装。</p>
+<p>1.2 创建仓库<br>然后需要创建一个仓库(repository)来存储我们的网站，点击首页任意位置出现的 New 按钮创建仓库, Respository name 中的 username.github.io 的 username 一定与前面的 Owner 一致，记住你的 username 下面会用到<br><img   class="lazyload" data-original="/set_up_blog/01.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ><br>点击 Create reponsitory ，到这第一步就已经完成了，下面是安装。</p>
 <p>2.安装<br>Hexo 可以说是目前最流行的博客框架了，基于 Nodejs，更多信息可以 google，下面需要安装的工具包括 Git，Nodejs，Hexo<br>2.1 安装 Git<br><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git 下载网址</a><br><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/bebba0d8038e">Git 安装教程</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/bebba0d8038e">https://www.jianshu.com/p/bebba0d8038e</a><br>安装好后，用 git version 来查看一下版本</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">git <span class="hljs-built_in">version</span><br></code></pre></td></tr></table></figure>
@@ -232,7 +232,7 @@
 <p>3.2 SSH 授权<br>打开命令行，输入 ssh-keygen -t rsa， 接着回车三下，会得到了两个文件：id_rsa 和 id_rsa.pub</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">ssh-keygen -t rsa</span><br></code></pre></td></tr></table></figure>
 
-<p>登录 Github，点击头像下的 settings，添加 ssh。新建一个 new ssh key，将 id_rsa.pub 文件里的内容复制上去<br><img   class="lazyload" data-original="/set-up-blog/02.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
+<p>登录 Github，点击头像下的 settings，添加 ssh。新建一个 new ssh key，将 id_rsa.pub 文件里的内容复制上去<br><img   class="lazyload" data-original="/set_up_blog/02.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
 <p>3.3 上传项目<br>先来看它的文档目录：</p>
 <ul>
 <li>_config.yml：网站的全局配置文件，设置包括网站标题、副标题、作者、关键字和描述信息等</li>
@@ -271,7 +271,7 @@
           <ul class="copyright">
   
     <li><strong>本文作者：</strong>秋色遇见🐈</li>
-    <li><strong>本文链接：</strong><a href="https://chenhong074.github.io/set-up-blog/index.html" title="https:&#x2F;&#x2F;chenhong074.github.io&#x2F;set-up-blog&#x2F;index.html">https:&#x2F;&#x2F;chenhong074.github.io&#x2F;set-up-blog&#x2F;index.html</a></li>
+    <li><strong>本文链接：</strong><a href="https://chenhong074.github.io/set_up_blog/index.html" title="https:&#x2F;&#x2F;chenhong074.github.io&#x2F;set_up_blog&#x2F;index.html">https:&#x2F;&#x2F;chenhong074.github.io&#x2F;set_up_blog&#x2F;index.html</a></li>
     <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
   
 </ul>
@@ -282,7 +282,7 @@
 
         
   <nav class="nav">
-    <a href="/configure-more-ssh/"><i class="iconfont iconleft"></i>同时配置两个SSH</a>
+    <a href="/configure_more_ssh/"><i class="iconfont iconleft"></i>同时配置两个SSH</a>
     <a></a>
   </nav>
 
